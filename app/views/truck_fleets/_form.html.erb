@@ -1,0 +1,24 @@
+<%= form_with(model: truck_fleet) do |form| %>
+  <% if truck_fleet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(truck_fleet.errors.count, "error") %> prohibited this truck_fleet from being saved:</h2>
+
+      <ul>
+        <% truck_fleet.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label :plate_number %><br>
+    <%= form.text_field :plate_number %>
+  </div>
+  <div>
+    <%= form.label :fuel_price_per_liter %><br>
+    <%= form.text_field :fuel_price_per_liter %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

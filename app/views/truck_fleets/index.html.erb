@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Truck Fleets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t("truck_fleet.id") %></th>
+      <th><%= t("truck_fleet.plate_number") %></th>
+      <th><%= t("truck_fleet.fuel_price_per_liter") %></th>
+      <th colspan="2"><%= t("actions") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @truck_fleets.each do |truck_fleet| %>
+      <tr>
+        <td><%= truck_fleet.id %></td>
+        <td><%= truck_fleet.plate_number %></td>
+        <td><%= truck_fleet.fuel_price_per_liter %></td>
+        <td><%= link_to 'Edit', edit_truck_fleet_path(truck_fleet) %></td>
+        <td><%= link_to 'Destroy', truck_fleet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Truck Fleet', new_truck_fleet_path %>
