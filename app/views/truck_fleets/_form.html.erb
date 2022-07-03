@@ -10,7 +10,14 @@
       </ul>
     </div>
   <% end %>
-
+  <div>
+    <%= form.label :plate_number %><br>
+    <%= form.text_field :plate_number %>
+  </div>
+  <div>
+    <%= form.label :fuel_price_per_liter %><br>
+    <%= form.text_field :fuel_price_per_liter %>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>

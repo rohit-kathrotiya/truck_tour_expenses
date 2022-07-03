@@ -1,13 +1,9 @@
 class TruckFleetsController < ApplicationController
-  before_action :set_truck_fleet, only: %i[ show edit update destroy ]
+  before_action :set_truck_fleet, only: %i[ edit update destroy ]
 
   # GET /truck_fleets or /truck_fleets.json
   def index
     @truck_fleets = TruckFleet.all
-  end
-
-  # GET /truck_fleets/1 or /truck_fleets/1.json
-  def show
   end
 
   # GET /truck_fleets/new
@@ -25,11 +21,9 @@ class TruckFleetsController < ApplicationController
 
     respond_to do |format|
       if @truck_fleet.save
-        format.html { redirect_to truck_fleet_url(@truck_fleet), notice: "Truck fleet was successfully created." }
-        format.json { render :show, status: :created, location: @truck_fleet }
+        format.html { redirect_to truck_fleets_url(@truck_fleet), notice: "Truck fleet was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @truck_fleet.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -38,11 +32,9 @@ class TruckFleetsController < ApplicationController
   def update
     respond_to do |format|
       if @truck_fleet.update(truck_fleet_params)
-        format.html { redirect_to truck_fleet_url(@truck_fleet), notice: "Truck fleet was successfully updated." }
-        format.json { render :show, status: :ok, location: @truck_fleet }
+        format.html { redirect_to truck_fleets_url(@truck_fleet), notice: "Truck fleet was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @truck_fleet.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,7 +45,6 @@ class TruckFleetsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to truck_fleets_url, notice: "Truck fleet was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
