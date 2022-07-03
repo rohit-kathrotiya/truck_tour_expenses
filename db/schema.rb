@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_03_100212) do
+ActiveRecord::Schema.define(version: 2022_07_03_113754) do
 
   create_table "truck_fleets", force: :cascade do |t|
     t.string "plate_number"
@@ -19,4 +19,16 @@ ActiveRecord::Schema.define(version: 2022_07_03_100212) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "truck_tours", force: :cascade do |t|
+    t.string "name"
+    t.integer "distance_in_kilometer"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "truck_fleet_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["truck_fleet_id"], name: "index_truck_tours_on_truck_fleet_id"
+  end
+
+  add_foreign_key "truck_tours", "truck_fleets"
 end

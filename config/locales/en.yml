@@ -5,3 +5,11 @@ en:
     id: "ID"
     plate_number: "Plate Number"
     fuel_price_per_liter: "Fuel Price (liter)"
+  truck_tour:
+    id: "ID"
+    name: "Name"
+    distance_in_kilometer: "Kilometer"
+    start_date: "Start Date"
+    end_date: "End Date"
+    truck_fleet_id: "Truck Fleet ID"
+    cost: "Tour Cost"

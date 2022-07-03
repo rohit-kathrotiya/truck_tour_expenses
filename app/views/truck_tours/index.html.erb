@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Truck Tours</h1>
+<br>
+<%= link_to 'New Truck Tour', new_truck_tour_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t("truck_tour.id") %></th>
+      <th><%= t("truck_tour.name") %></th>
+      <th><%= t("truck_tour.truck_fleet_id") %></th>
+      <th><%= t("truck_fleet.plate_number") %></th>
+      <th><%= t("truck_tour.distance_in_kilometer") %></th>
+      <th><%= t("truck_tour.start_date") %></th>
+      <th><%= t("truck_tour.end_date") %></th>
+      <th><%= t("truck_tour.cost") %></th>
+      <th colspan="2"><%= t("actions") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @truck_tours.each do |truck_tour| %>
+      <tr>
+        <td><%= truck_tour.id %></td>
+        <td><%= truck_tour.name %></td>
+        <td><%= truck_tour.truck_fleet_id %></td>
+        <td><%= truck_tour.truck_fleet.plate_number %></td>
+        <td><%= truck_tour.distance_in_kilometer %></td>
+        <td><%= truck_tour.start_date %></td>
+        <td><%= truck_tour.end_date %></td>
+        
+        <%# Using helper method to print cost of tour %>
+        <td><%= cost_of_tour(truck_tour.truck_fleet.fuel_price_per_liter, truck_tour.distance_in_kilometer) %></td>
+        
+        <%# This is the second way to display cost of tour %>
+        <%# <td><%= (truck_tour.truck_fleet&.fuel_price_per_liter * truck_tour.distance_in_kilometer)</td> %>
+        
+        <td><%= link_to 'Edit', edit_truck_tour_path(truck_tour) %></td>
+        <td><%= link_to 'Destroy', truck_tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Truck Fleet', truck_fleets_path %>
