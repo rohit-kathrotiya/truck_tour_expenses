@@ -1,0 +1,2 @@
+class TruckFleet < ApplicationRecord
+end
