@@ -21,7 +21,7 @@ class TruckFleetsController < ApplicationController
 
     respond_to do |format|
       if @truck_fleet.save
-        format.html { redirect_to truck_fleets_url(@truck_fleet), notice: "Truck fleet was successfully created." }
+        format.html { redirect_to truck_fleets_url, notice: "Truck fleet was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -32,7 +32,7 @@ class TruckFleetsController < ApplicationController
   def update
     respond_to do |format|
       if @truck_fleet.update(truck_fleet_params)
-        format.html { redirect_to truck_fleets_url(@truck_fleet), notice: "Truck fleet was successfully updated." }
+        format.html { redirect_to truck_fleets_url, notice: "Truck fleet was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end

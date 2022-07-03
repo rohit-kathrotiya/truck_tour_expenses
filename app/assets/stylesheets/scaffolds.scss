@@ -3,6 +3,10 @@ body {
   color: #333;
   margin: 33px; }
 
+table td {
+  border-style: groove;
+}
+
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -24,10 +28,11 @@ a:hover {
   background-color: #000; }
 
 th {
-  padding-bottom: 5px; }
+  padding-bottom: 15px;
+  border-style: groove; }
 
 td {
-  padding: 0 5px 7px; }
+  padding: 0 15px 20px; }
 
 div.field,
 div.actions {
