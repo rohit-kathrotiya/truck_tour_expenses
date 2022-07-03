@@ -15,7 +15,12 @@
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
-  
+
+  <div class="field">
+    <%= form.label :truck_fleet_id %>
+    <%= form.collection_select :truck_fleet_id, @truck_fleets, :id, :plate_number, include_black: true %>
+  </div>
+
   <div class="field">
     <%= form.label :distance_in_kilometer %>
     <%= form.number_field :distance_in_kilometer %>
@@ -29,11 +34,6 @@
   <div class="field">
     <%= form.label :tour_end_date %>
     <%= form.date_select :tour_end_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :truck_fleet_id %>
-    <%= form.text_field :truck_fleet_id %>
   </div>
 
   <div class="actions">

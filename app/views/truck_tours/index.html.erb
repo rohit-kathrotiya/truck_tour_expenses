@@ -11,6 +11,7 @@
       <th><%= t("truck_tour.tour_start_date") %></th>
       <th><%= t("truck_tour.tour_end_date") %></th>
       <th><%= t("truck_tour.truck_fleet_id") %></th>
+      <th><%= t("truck_fleet.plate_number") %></th>
       <th colspan="2"><%= t("actions") %></th>
     </tr>
   </thead>
@@ -24,6 +25,7 @@
         <td><%= truck_tour.tour_start_date %></td>
         <td><%= truck_tour.tour_end_date %></td>
         <td><%= truck_tour.truck_fleet_id %></td>
+        <td><%= truck_tour.truck_fleet&.plate_number %></td>
         <td><%= link_to 'Edit', edit_truck_tour_path(truck_tour) %></td>
         <td><%= link_to 'Destroy', truck_tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -34,3 +36,4 @@
 <br>
 
 <%= link_to 'New Truck Tour', new_truck_tour_path %>
+<%= link_to 'Truck Fleet', truck_fleets_path %>

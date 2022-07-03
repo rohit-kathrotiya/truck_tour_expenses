@@ -1,5 +1,6 @@
 class TruckToursController < ApplicationController
   before_action :set_truck_tour, only: %i[ edit update destroy ]
+  before_action :truck_fleet_data
 
   # GET /truck_tours or /truck_tours.json
   def index
@@ -57,5 +58,9 @@ class TruckToursController < ApplicationController
     # Only allow a list of trusted parameters through.
     def truck_tour_params
       params.require(:truck_tour).permit(:name, :distance_in_kilometer, :tour_start_date, :tour_end_date, :truck_fleet_id)
+    end
+
+    def truck_fleet_data
+      @truck_fleets = TruckFleet.all
     end
 end
