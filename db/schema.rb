@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 2022_07_03_113754) do
   create_table "truck_tours", force: :cascade do |t|
     t.string "name"
     t.integer "distance_in_kilometer"
-    t.date "tour_start_date"
-    t.date "tour_end_date"
+    t.date "start_date"
+    t.date "end_date"
     t.integer "truck_fleet_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

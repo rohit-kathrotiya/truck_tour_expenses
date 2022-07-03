@@ -5,6 +5,6 @@ class TruckTour < ApplicationRecord
   validates_uniqueness_of :name
 
   #validates some columns
-  validates :distance_in_kilometer, :tour_start_date, :tour_end_date, presence: true
+  validates :distance_in_kilometer, :start_date, :end_date, presence: true
 
 end
