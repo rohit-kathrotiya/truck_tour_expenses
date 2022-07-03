@@ -12,3 +12,4 @@ en:
     tour_start_date: "Start Date"
     tour_end_date: "End Date"
     truck_fleet_id: "Truck Fleet ID"
+    cost: "Tour Cost"

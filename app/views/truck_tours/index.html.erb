@@ -12,6 +12,7 @@
       <th><%= t("truck_tour.tour_end_date") %></th>
       <th><%= t("truck_tour.truck_fleet_id") %></th>
       <th><%= t("truck_fleet.plate_number") %></th>
+      <th><%= t("truck_tour.cost") %></th>
       <th colspan="2"><%= t("actions") %></th>
     </tr>
   </thead>
@@ -26,6 +27,13 @@
         <td><%= truck_tour.tour_end_date %></td>
         <td><%= truck_tour.truck_fleet_id %></td>
         <td><%= truck_tour.truck_fleet&.plate_number %></td>
+        
+        <%# Using helper method to print cost of tour %>
+        <td><%= cost_of_tour(truck_tour.truck_fleet&.fuel_price_per_liter, truck_tour.distance_in_kilometer) %></td>
+        
+        <%# This is the second way to display cost of tour %>
+        <%# <td><%= (truck_tour.truck_fleet&.fuel_price_per_liter * truck_tour.distance_in_kilometer)</td> %>
+        
         <td><%= link_to 'Edit', edit_truck_tour_path(truck_tour) %></td>
         <td><%= link_to 'Destroy', truck_tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
