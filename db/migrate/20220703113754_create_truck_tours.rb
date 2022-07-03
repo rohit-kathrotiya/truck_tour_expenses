@@ -1,6 +1,7 @@
 class CreateTruckTours < ActiveRecord::Migration[6.1]
   def change
     create_table :truck_tours do |t|
+      t.string :name, unique: true
       t.integer :distance_in_kilometer
       t.date :tour_start_date
       t.date :tour_end_date

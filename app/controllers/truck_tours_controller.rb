@@ -56,6 +56,6 @@ class TruckToursController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def truck_tour_params
-      params.require(:truck_tour).permit(:distance_in_kilometer, :tour_start_date, :tour_end_date, :truck_fleet_id)
+      params.require(:truck_tour).permit(:name, :distance_in_kilometer, :tour_start_date, :tour_end_date, :truck_fleet_id)
     end
 end
