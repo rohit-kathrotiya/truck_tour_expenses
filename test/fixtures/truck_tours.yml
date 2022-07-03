@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  distance_in_kilometer: 1
+  tour_start_date: 2022-07-03
+  tour_end_date: 2022-07-03
+  truck_fleet: one
+
+two:
+  distance_in_kilometer: 1
+  tour_start_date: 2022-07-03
+  tour_end_date: 2022-07-03
+  truck_fleet: two

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Truck Tours</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Distance in kilometer</th>
+      <th>Tour start date</th>
+      <th>Tour end date</th>
+      <th>Truck fleet</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @truck_tours.each do |truck_tour| %>
+      <tr>
+        <td><%= truck_tour.distance_in_kilometer %></td>
+        <td><%= truck_tour.tour_start_date %></td>
+        <td><%= truck_tour.tour_end_date %></td>
+        <td><%= truck_tour.truck_fleet_id %></td>
+        <td><%= link_to 'Show', truck_tour %></td>
+        <td><%= link_to 'Edit', edit_truck_tour_path(truck_tour) %></td>
+        <td><%= link_to 'Destroy', truck_tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Truck Tour', new_truck_tour_path %>
